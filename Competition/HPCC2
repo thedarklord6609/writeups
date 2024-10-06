@@ -46,3 +46,4 @@ Aside from an odd issue where the hkeating account would proceed to successfully
 
 FTP had an uptime of 79% and was only down for a bit during the middle of the competition where I had to learn how to access ftp (it was in a local directory and took me way too long to figure out), and the last few minutes.
 
+Putting more effort into hardening services, specifically ftp, speedier bug and threat hunting, and better practices may have resulted in a more ideal upkeep of 90%+ for both services
