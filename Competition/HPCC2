@@ -25,7 +25,11 @@ used "delgroup" on anything that wasnt wheel, sudo, or one of the original group
 
 running "cat /var/log/btmp" listed the attempted connections to my ssh client
 ex.
-Tssh:nottyhkeating100.100.101.101��gddee.7ssh:nottyplinktern100.100.250.250��gdd��.7ssh:nottyplinktern100.100.250.250��gdd���7ssh:nottyhkeating100.100.101.101ޙgddee�7ssh:nottyplinktern100.100.250.250��gdd���7ssh:nottyplinktern100.100.250.250��gdd���7ssh:nottyhkeating100.100.101.101�gddee�7ssh:nottyhkeating100.100.101.101b�gddee�7ssh:nottyhkeating100.100.101.101��gddee�7ssh:nottyhkeating100.100.101.101��gddee�7ssh:nottyhkeating100.100.101.1012�gddee8ssh:nottyhkeating100.100.101.101u�gddee%8ssh:nottyhkeating100.100.101.101��gddeeP8ssh:nottyhkeating100.100.101.101��gddeeh8ssh:nottyhkeating100.100.101.101@�gddee|8ssh:nottyplinktern100.100.250.250]�gdd��|8ssh:nottyplinktern100.100.250.250_�gdd���8ssh:nottyhkeating100.100.101.101��gddee�8ssh:nottyhkeating100.100.101.101ɜgddeeG9ssh:nottyhkeating100.100.101.101
+Tssh:nottyhkeating100.100.101.101��gddee.7ssh:nottyplinktern100.100.250.250��gdd��.7ssh:nottyplinktern100.100.250.250��gdd���7ssh:nottyhkeating100.100.101.101ޙgddee�
+7ssh:nottyplinktern100.100.250.250��gdd���7ssh:nottyplinktern100.100.250.250��gdd���7ssh:nottyhkeating100.100.101.101�gddee�7ssh:nottyhkeating100.100.101.101b�gddee�
+7ssh:nottyhkeating100.100.101.101��gddee�7ssh:nottyhkeating100.100.101.101��gddee�7ssh:nottyhkeating100.100.101.1012�gddee8ssh:nottyhkeating100.100.101.101u�gddee%
+8ssh:nottyhkeating100.100.101.101��gddeeP8ssh:nottyhkeating100.100.101.101��gddeeh8ssh:nottyhkeating100.100.101.101@�gddee|8ssh:nottyplinktern100.100.250.250]�gdd��|
+8ssh:nottyplinktern100.100.250.250_�gdd���8ssh:nottyhkeating100.100.101.101��gddee�8ssh:nottyhkeating100.100.101.101ɜgddeeG9ssh:nottyhkeating100.100.101.101
 
 knowing hkeating using consistent IP of 100.100.101.101 allowed me to jbow what NOT to blacklist, with both other IPs and users being suspicious, and a giveaway it was a redteam member.
 
