@@ -1,4 +1,5 @@
 team 19 - cargo - rocky linux 9 - ssh and ftp
+79% ftp 84% ssh upkeeps
 
 Initial Start:
 log into plinktern and immediately change the password using "sudo -i" "passwd plinktern"
