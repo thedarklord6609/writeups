@@ -1,1 +1,43 @@
+team 19 - cargo - rocky linux 9 - ssh and ftp
+
+Initial Start:
+log into plinktern and immediately change the password using "sudo -i" "passwd plinktern"
+"sudo dnf yum update" to update services (or whatever the redhat version of sudo apt install is)
+Couldn't change username while a process (probably ssh) was running/connected, created new user, ShirakamkFubuki, with sudo perms
+logged into new user via ssh, went into root, changed username from plinktern to HoushouMarine using usermod -l plinktern HoushouMarine
+logged back into original account "HoushouMarine", deluser ShirakamkFubuki
+Researched ssh and linux logs to find the two important file paths that were the root of my strategy
+
+/var/log/btmp - displayed the username, IP, successful/failed password, failed/managed to connect
+/var/log/secure - authorized logs of EVERYTHING, combined with the grep command, gave key info
+
+additionally, ssh's manual blacklist, /etc/hosts.deny
+
+running ls /home/ gave me user directories which were not of my own, which I then deleted
+using "cat /var/log/secure" let me scan through the logs and pick up important information, notably user create
+using "cat var/log/secure | grep "new user"" allowed me to see both newly created accounts, as well as the previous account that deleted them
+deleting everything except my user secured my SSH at an entry level, and a unique username would help to make bruteforcing less efficient
+The combination of "cat var/log/secure | grep group" and "cat /etc/group" allowed me to verify there were no other users, or unauthorized groups, aside from myself
+
+"deluser [username]" would delete the user, unless they had a process running, which I killed with "kill [process ID]"
+some processes would spawn back the old ones, so the makeshift fix was spamming "pkill -u [username]" about 10-15 times then successfully would let me kill the user
+used "delgroup" on anything that wasnt wheel, sudo, or one of the original groups
+
+running "cat /var/log/btmp" listed the attempted connections to my ssh client
+ex.
+Tssh:nottyhkeating100.100.101.101��gddee.7ssh:nottyplinktern100.100.250.250��gdd��.7ssh:nottyplinktern100.100.250.250��gdd���7ssh:nottyhkeating100.100.101.101ޙgddee�7ssh:nottyplinktern100.100.250.250��gdd���7ssh:nottyplinktern100.100.250.250��gdd���7ssh:nottyhkeating100.100.101.101�gddee�7ssh:nottyhkeating100.100.101.101b�gddee�7ssh:nottyhkeating100.100.101.101��gddee�7ssh:nottyhkeating100.100.101.101��gddee�7ssh:nottyhkeating100.100.101.1012�gddee8ssh:nottyhkeating100.100.101.101u�gddee%8ssh:nottyhkeating100.100.101.101��gddeeP8ssh:nottyhkeating100.100.101.101��gddeeh8ssh:nottyhkeating100.100.101.101@�gddee|8ssh:nottyplinktern100.100.250.250]�gdd��|8ssh:nottyplinktern100.100.250.250_�gdd���8ssh:nottyhkeating100.100.101.101��gddee�8ssh:nottyhkeating100.100.101.101ɜgddeeG9ssh:nottyhkeating100.100.101.101
+
+knowing hkeating using consistent IP of 100.100.101.101 allowed me to jbow what NOT to blacklist, with both other IPs and users being suspicious, and a giveaway it was a redteam member.
+
+with "sudo nano /etc/host.deny" I would manually insert the IP into the then blank file to create a list, for example:
+100.100.250.250
+10.5.0.84
+
+spoofing seemed to be a common occurance as the port and end of the IP would often change after being blacklisted. Trying to see if "10.5.0*" would work in the blacklist seemed to act as a wild card for anything after the .0, and subsequently blocked any IP spoofing from that IP.
+
+FTP seemed to be an easy fix as I made the entire /var/ftp directory fully read only, though only around the middle of the competition after it down, due to thinking a teammates script successfully automated that. (It did not and was an oversight I should have verified at the beginning)
+
+Aside from an odd issue where the hkeating account would proceed to successfully connect, and then fail the password check until I changed the password back, resulted with an uptime of 84% (red team or tech issue I have no idea), and then down for the last ~5 minutes where I was forcefully disconnected from ssh due it being shut down.
+
+FTP had an uptime of 79% and was only down for a bit during the middle of the competition where I had to learn how to access ftp (it was in a local directory and took me way too long to figure out), and the last few minutes.
 
