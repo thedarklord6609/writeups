@@ -32,7 +32,7 @@ Tssh:nottyhkeating100.100.101.101ï¿½ï¿½gddee.7ssh:nottyplinktern100.100.250.250ï
 8ssh:nottyhkeating100.100.101.101ï¿½ï¿½gddeeP8ssh:nottyhkeating100.100.101.101ï¿½ï¿½gddeeh8ssh:nottyhkeating100.100.101.101@ï¿½gddee|8ssh:nottyplinktern100.100.250.250]ï¿½gddï¿½ï¿½|
 8ssh:nottyplinktern100.100.250.250_ï¿½gddï¿½ï¿½ï¿½8ssh:nottyhkeating100.100.101.101ï¿½ï¿½gddeeï¿½8ssh:nottyhkeating100.100.101.101ÉœgddeeG9ssh:nottyhkeating100.100.101.101
 
-knowing hkeating using consistent IP of 100.100.101.101 allowed me to jbow what NOT to blacklist, with both other IPs and users being suspicious, and a giveaway it was a redteam member.
+knowing hkeating using consistent IP of 100.100.101.101 allowed me to know what NOT to blacklist, with both other IPs and users being suspicious, and a giveaway it was a redteam member.
 
 with "sudo nano /etc/host.deny" I would manually insert the IP into the then blank file to create a list, for example:
 100.100.250.250
