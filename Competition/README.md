@@ -2,7 +2,7 @@ Competition placements
 
 2024
 
-  October
+October
 
 Horse Plinko @ UCF day 1 - 12th/22
 
