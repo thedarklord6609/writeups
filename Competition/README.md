@@ -1,4 +1,4 @@
-Competition placements
+Competition Placements
 
 2024
 
