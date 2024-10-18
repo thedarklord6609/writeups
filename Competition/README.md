@@ -1,6 +1,9 @@
 Competition placements
 
-2024\n
+2024
+
 October
+
 Horse Plink @ UCF day 1 - 12th/22
+
 MetaCTF - 124th/1030
