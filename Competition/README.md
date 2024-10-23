@@ -7,3 +7,5 @@ October
 Horse Plinko @ UCF day 1 - 12th/22
 
 MetaCTF - 124th/1030
+
+SunshineCTF (team) - 214th/881
